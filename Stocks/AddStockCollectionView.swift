@@ -12,7 +12,14 @@ class AddStockCollectionView: UICollectionViewController
 {
     private let reuseIdentifier = "StockCell"
     private let headerIdentifier = "headerIdentifier"
-    private let sectionInsets = UIEdgeInsets(top: 50.0, left: 40.0, bottom: 50.0, right: 40.0)
+    private let sectionInsets = UIEdgeInsets(top: 10.0, left: 40.0, bottom: 50.0, right: 40.0)
+    
+    private var stocks = [AccountProtocol]()
+    
+    override func viewDidLoad() {
+         stocks = Singleton.sharedInstance.returnAllStocks()
+        self.title = "New Account"
+    }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -20,22 +27,20 @@ class AddStockCollectionView: UICollectionViewController
     
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return Singleton.sharedInstance.returnAllStocks().count
     }
     
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! StockCell
+            cell.logoImage.image = stocks[indexPath.item].image
+            cell.titleLabel.text = stocks[indexPath.item].title
         
         return cell
     }
 }
 
 extension AddStockCollectionView : UICollectionViewDelegateFlowLayout{
-    
-    //    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-    //
-    //    }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return sectionInsets
@@ -54,6 +59,16 @@ extension AddStockCollectionView : UICollectionViewDelegateFlowLayout{
         default:
             assert(false, "Unexpected element kind")
         }
+    }
+    
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        //проверка убрана для теста UI
+        
+        //if (Singleton.sharedInstance.authorizedAccounts.indexOf({$0 == Singleton.sharedInstance.envato as AccountProtocol}) == nil) {
+            stocks[indexPath.item].authorization()
+      //  }
+        
     }
     
     

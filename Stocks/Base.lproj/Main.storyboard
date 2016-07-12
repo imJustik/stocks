@@ -126,9 +126,23 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ndp-qg-Atx">
-                        <barButtonItem key="leftBarButtonItem" title="Total: 50$" id="s04-PM-ZzH">
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                        </barButtonItem>
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="pyF-Nb-Yma">
+                            <rect key="frame" x="180" y="6" width="240" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: 0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hA-XF-u5b">
+                                    <rect key="frame" x="80" y="6" width="81" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="5hA-XF-u5b" firstAttribute="centerX" secondItem="pyF-Nb-Yma" secondAttribute="centerX" id="ZcT-QP-7SO"/>
+                                <constraint firstItem="5hA-XF-u5b" firstAttribute="centerY" secondItem="pyF-Nb-Yma" secondAttribute="centerY" id="u1o-Jy-sql"/>
+                            </constraints>
+                        </view>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Cg4-pu-esg">
                             <connections>
                                 <segue destination="A7G-M0-vAp" kind="show" id="dPV-hP-E2j"/>
@@ -138,7 +152,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTu-0x-tC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1209" y="285"/>
+            <point key="canvasLocation" x="633" y="13"/>
         </scene>
         <!--Add Stock Collection View-->
         <scene sceneID="Oc0-7U-sQ9">
@@ -174,7 +188,6 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="sKU-KA-A7n" firstAttribute="top" secondItem="LgQ-qK-Y6r" secondAttribute="top" id="2hM-cq-e9r"/>
                                     <constraint firstItem="sKU-KA-A7n" firstAttribute="height" secondItem="LgQ-qK-Y6r" secondAttribute="height" multiplier="0.83" id="GDV-ZR-Mge"/>
@@ -217,7 +230,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bo-VU-0hK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1893" y="289"/>
+            <point key="canvasLocation" x="1321" y="12"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XBn-vK-1kE">
@@ -235,7 +248,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgl-oV-kPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="397" y="285"/>
+            <point key="canvasLocation" x="-11" y="13"/>
         </scene>
     </scenes>
     <resources>

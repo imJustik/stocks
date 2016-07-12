@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Envato.(authorization() -&gt; ()).(closure #1):Envato.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "&quot;Bearer \(tkn)&quot;">
+            </PersistentString>
+            <PersistentString
+               value = "Singleton.sharedInstance.authorizedAccounts.count">
+            </PersistentString>
+            <PersistentString
+               value = "response as! String">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "URLRequest(Method, URLStringConvertible, headers : [String : String]?) -&gt; NSMutableURLRequest:Alamofire.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "headers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Envato.(authorization() -&gt; ()).(closure #1).(closure #1):Envato.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dict">
+            </PersistentString>
+            <PersistentString
+               value = "response.result.value as! NSDictionary">
+            </PersistentString>
+            <PersistentString
+               value = "dict[&quot;account&quot;] ">
+            </PersistentString>
+            <PersistentString
+               value = "Float(balance)">
+            </PersistentString>
+            <PersistentString
+               value = "account[&quot;balance&quot;] as! String)">
+            </PersistentString>
+            <PersistentString
+               value = "Int(account[&quot;balance&quot;])">
+            </PersistentString>
+            <PersistentString
+               value = "account[&quot;balance&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "response.result.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TableViewController.tableView(UITableView, numberOfRowsInSection : Int) -&gt; Int:TableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Singleton.sharedInstance.authorizedAccounts.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

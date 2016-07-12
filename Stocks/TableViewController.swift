@@ -9,27 +9,33 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-
+    
     let cellId = "cell"
     var selectedIndexPath: NSIndexPath?
+    
+    override func viewDidAppear(animated: Bool) {
+        self.tableView.reloadData()
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return Singleton.sharedInstance.authorizedAccounts.count
     }
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as! TableCell
         
-        cell.titleLable.text = "Test Title"
-        cell.moneyLabel.text = "50$"
+        cell.logoImage.image = Singleton.sharedInstance.authorizedAccounts[indexPath.item].image
+        cell.titleLable.text = Singleton.sharedInstance.authorizedAccounts[indexPath.item].title
+        cell.moneyLabel.text = String(Singleton.sharedInstance.authorizedAccounts[indexPath.item].money)
         
         
         return cell
     }
- 
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let previousIndexPath = selectedIndexPath
         if indexPath == selectedIndexPath {
@@ -58,7 +64,7 @@ class TableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         (cell as! TableCell).ignoreFrameChanges()
-
+        
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -67,6 +73,23 @@ class TableViewController: UITableViewController {
         } else {
             return TableCell.defaultHeight
         }
+    }
+    
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteAction = UITableViewRowAction(style: .Normal, title: "Delete") { ( action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+        Singleton.sharedInstance.authorizedAccounts.removeAtIndex(indexPath.item)
+        self.tableView.reloadData()
+           
+        }
+        deleteAction.backgroundColor = UIColor.redColor()
+        return [deleteAction]
+        
     }
 }
 
