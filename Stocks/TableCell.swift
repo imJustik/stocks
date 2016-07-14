@@ -17,8 +17,8 @@ class TableCell: UITableViewCell {
     
     @IBOutlet weak var secondSection: UIView!
     
-    class var expandedHeight: CGFloat {get {return 150} }
-    class var defaultHeight: CGFloat {get {return 56} }
+    class var expandedHeight: CGFloat {get {return 185} }
+    class var defaultHeight: CGFloat {get {return 95} }
     
     func checkHeight() {
         secondSection.hidden = ( frame.size.height < TableCell.expandedHeight)

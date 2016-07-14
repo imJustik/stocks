@@ -10,7 +10,7 @@ import UIKit
 
 class StockPhotoHeaderView: UICollectionReusableView {
 
-    @IBOutlet weak var headerTitle: UILabel!
+
     
    
 }

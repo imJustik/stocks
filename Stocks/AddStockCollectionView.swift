@@ -12,13 +12,12 @@ class AddStockCollectionView: UICollectionViewController
 {
     private let reuseIdentifier = "StockCell"
     private let headerIdentifier = "headerIdentifier"
-    private let sectionInsets = UIEdgeInsets(top: 10.0, left: 40.0, bottom: 50.0, right: 40.0)
+    private let sectionInsets = UIEdgeInsets(top: 10.0, left: 5.0, bottom: 50.0, right: 5.0)
     
     private var stocks = [AccountProtocol]()
     
     override func viewDidLoad() {
          stocks = Singleton.sharedInstance.returnAllStocks()
-        self.title = "New Account"
     }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -50,16 +49,7 @@ extension AddStockCollectionView : UICollectionViewDelegateFlowLayout{
         return 10
     }
     
-    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionElementKindSectionHeader:
-            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: headerIdentifier, forIndexPath: indexPath) as! StockPhotoHeaderView
-            headerView.headerTitle.text = "Adding a new account"
-            return headerView
-        default:
-            assert(false, "Unexpected element kind")
-        }
-    }
+
     
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {

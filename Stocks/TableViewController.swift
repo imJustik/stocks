@@ -12,17 +12,33 @@ class TableViewController: UITableViewController {
     
     let cellId = "cell"
     var selectedIndexPath: NSIndexPath?
+
     
     override func viewDidAppear(animated: Bool) {
+    
         self.tableView.reloadData()
+        
+        
+        //set backgroud color
+        tableView.opaque = false
+        tableView.backgroundColor = UIColor(red: 36/255, green: 51/255, blue: 64/255, alpha: 1)
+        tableView.backgroundView = nil;
+        
+        
+        
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+       self.navigationController!.navigationBar.translucent = false //убирает прозрачность у navigation bar
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return Singleton.sharedInstance.authorizedAccounts.count
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Singleton.sharedInstance.authorizedAccounts.count
+        return 1
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -32,6 +48,7 @@ class TableViewController: UITableViewController {
         cell.titleLable.text = Singleton.sharedInstance.authorizedAccounts[indexPath.item].title
         cell.moneyLabel.text = String(Singleton.sharedInstance.authorizedAccounts[indexPath.item].money)
         
+        cell.contentView.backgroundColor = UIColor.clearColor()
         
         return cell
     }
@@ -75,11 +92,6 @@ class TableViewController: UITableViewController {
         }
     }
     
-    
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-    }
-    
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
         let deleteAction = UITableViewRowAction(style: .Normal, title: "Delete") { ( action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
@@ -91,5 +103,24 @@ class TableViewController: UITableViewController {
         return [deleteAction]
         
     }
-}
+    
+    
+    //Отступы
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 5
+    }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = UIView()
+        header.backgroundColor = UIColor.clearColor()
+        header.frame.size = CGSize(width: self.view.frame.size.width, height: 10)
+        
+        return header
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        view.tintColor = UIColor.clearColor()
+    }
+   }
 

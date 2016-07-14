@@ -28,7 +28,7 @@
          contextName = "Envato.(authorization() -&gt; ()).(closure #1).(closure #1):Envato.swift">
          <PersistentStrings>
             <PersistentString
-               value = "dict">
+               value = "response.result.value">
             </PersistentString>
             <PersistentString
                value = "response.result.value as! NSDictionary">
@@ -37,19 +37,22 @@
                value = "dict[&quot;account&quot;] ">
             </PersistentString>
             <PersistentString
+               value = "Singleton.sharedInstance.envato.money">
+            </PersistentString>
+            <PersistentString
                value = "Float(balance)">
             </PersistentString>
             <PersistentString
                value = "account[&quot;balance&quot;] as! String)">
             </PersistentString>
             <PersistentString
-               value = "Int(account[&quot;balance&quot;])">
-            </PersistentString>
-            <PersistentString
                value = "account[&quot;balance&quot;]">
             </PersistentString>
             <PersistentString
-               value = "response.result.value">
+               value = "Int(account[&quot;balance&quot;])">
+            </PersistentString>
+            <PersistentString
+               value = "dict">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

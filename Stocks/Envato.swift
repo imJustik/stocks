@@ -51,10 +51,6 @@ class Envato: AccountProtocol {
         
         WebViewController.targetURL = NSURL(string: "https://api.envato.com/authorization?response_type=code&client_id=comtreedeostocks-9hwlxd6c&redirect_uri=stocks://&state=demoGragon1")
         
-        
-        
-        //WebViewController.targetURL = NSURL(string:"https://www.google.com")
-        
         oauthswift.authorize_url_handler = WebViewController()
         oauthswift.authorizeWithCallbackURL(
             NSURL(string:"stocks://")!,
@@ -72,7 +68,6 @@ class Envato: AccountProtocol {
                         debugPrint(response)
                         let dict = response.result.value as! NSDictionary
                         if let account = dict["account"] {
-                           // Singleton.sharedInstance.envato.money = account["balance"] as! Int
                            let balance = account["balance"] as! String
                             Singleton.sharedInstance.envato.money = Float(balance)!
                         }
