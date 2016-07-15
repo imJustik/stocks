@@ -17,11 +17,15 @@ class TableCell: UITableViewCell {
     
     @IBOutlet weak var secondSection: UIView!
     
+    @IBOutlet weak var openCell: UIImageView!
+    
+    
     class var expandedHeight: CGFloat {get {return 185} }
     class var defaultHeight: CGFloat {get {return 95} }
     
     func checkHeight() {
         secondSection.hidden = ( frame.size.height < TableCell.expandedHeight)
+        openCell.hidden = !(frame.size.height < TableCell.expandedHeight)
     }
     
     func watchFrameChanges() {

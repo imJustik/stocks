@@ -12,12 +12,16 @@ class AddStockCollectionView: UICollectionViewController
 {
     private let reuseIdentifier = "StockCell"
     private let headerIdentifier = "headerIdentifier"
-    private let sectionInsets = UIEdgeInsets(top: 10.0, left: 5.0, bottom: 50.0, right: 5.0)
+    private let sectionInsets = UIEdgeInsets(top: 10.0, left: 5.0, bottom: 10.0, right: 5.0)
     
     private var stocks = [AccountProtocol]()
     
     override func viewDidLoad() {
          stocks = Singleton.sharedInstance.returnAllStocks()
+        
+
+    
+        
     }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -33,7 +37,6 @@ class AddStockCollectionView: UICollectionViewController
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! StockCell
             cell.logoImage.image = stocks[indexPath.item].image
-            cell.titleLabel.text = stocks[indexPath.item].title
         
         return cell
     }
@@ -49,9 +52,20 @@ extension AddStockCollectionView : UICollectionViewDelegateFlowLayout{
         return 10
     }
     
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
+    {
+        var collectionViewSize = collectionView.frame.size
+        collectionViewSize.width = (collectionViewSize.width - 15) / 2.0 //Display two elements in a row.
+        collectionViewSize.height = collectionViewSize.height/3
 
+        
+        return collectionViewSize
+    }
+     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 5
+    }
     
-    
+   
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         //проверка убрана для теста UI
         

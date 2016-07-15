@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Stocks/TableCell.swift"
-            timestampString = "489674868.344741"
+            timestampString = "490268521.021791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "ignoreFrameChanges()"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Stocks/AddStockCollectionView.swift"
-            timestampString = "490185739.744262"
+            timestampString = "490205912.639158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "AddStockCollectionView"
             landmarkType = "3">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Stocks/AddStockCollectionView.swift"
-            timestampString = "490185739.744262"
+            timestampString = "490205912.639158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "AddStockCollectionView"
             landmarkType = "3">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Stocks/AddStockCollectionView.swift"
-            timestampString = "490185739.744262"
+            timestampString = "490205912.639158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "AddStockCollectionView"
             landmarkType = "3">
          </BreakpointContent>

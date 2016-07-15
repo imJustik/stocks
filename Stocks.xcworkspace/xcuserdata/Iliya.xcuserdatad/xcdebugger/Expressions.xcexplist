@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "Envato.(authorization() -&gt; ()).(closure #1).(closure #2):Envato.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "username as! String">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "Envato.(authorization() -&gt; ()).(closure #1):Envato.swift">
          <PersistentStrings>
             <PersistentString

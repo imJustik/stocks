@@ -25,6 +25,7 @@ class TableViewController: UITableViewController {
         tableView.backgroundView = nil;
         
         
+      
         
     }
     
@@ -46,7 +47,7 @@ class TableViewController: UITableViewController {
         
         cell.logoImage.image = Singleton.sharedInstance.authorizedAccounts[indexPath.item].image
         cell.titleLable.text = Singleton.sharedInstance.authorizedAccounts[indexPath.item].title
-        cell.moneyLabel.text = String(Singleton.sharedInstance.authorizedAccounts[indexPath.item].money)
+        cell.moneyLabel.text = String("\(Singleton.sharedInstance.authorizedAccounts[indexPath.item].money)$")
         
         cell.contentView.backgroundColor = UIColor.clearColor()
         
@@ -92,6 +93,8 @@ class TableViewController: UITableViewController {
         }
     }
     
+  
+    
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
         let deleteAction = UITableViewRowAction(style: .Normal, title: "Delete") { ( action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
@@ -105,7 +108,7 @@ class TableViewController: UITableViewController {
     }
     
     
-    //Отступы
+    //spacing
     
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 5
@@ -122,5 +125,13 @@ class TableViewController: UITableViewController {
     override func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         view.tintColor = UIColor.clearColor()
     }
-   }
+    
+    //back button
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        let backItem = UIBarButtonItem()
+//        backItem.title = ""
+//        navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+    }
+    
+       }
 

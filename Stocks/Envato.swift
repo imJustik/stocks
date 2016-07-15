@@ -54,27 +54,45 @@ class Envato: AccountProtocol {
         oauthswift.authorize_url_handler = WebViewController()
         oauthswift.authorizeWithCallbackURL(
             NSURL(string:"stocks://")!,
-            scope: "user.view",        
+            scope: "user.view",
             state: "demoGragon1",
             success: { credential, response, parameters in
-                print(parameters)
                 if let tkn = parameters["access_token"] {
                     self.token = tkn
                     print(tkn)
                     
                     let headers = ["Authorization":" Bearer \(tkn)"]
+                    
+                    //get balance
                     Alamofire.request(.POST, "https://api.envato.com/v1/market/private/user/account.json", headers: headers)
-                    .responseJSON { response in
-                        debugPrint(response)
-                        let dict = response.result.value as! NSDictionary
-                        if let account = dict["account"] {
-                           let balance = account["balance"] as! String
-                            Singleton.sharedInstance.envato.money = Float(balance)!
-                        }
+                        .responseJSON { response in
+                            debugPrint(response)
+                            let dict = response.result.value as! NSDictionary
+                            if let account = dict["account"] {
+                                let balance = account["balance"] as! String
+                                Singleton.sharedInstance.envato.money = Float(balance)!
+                                
+                                Singleton.sharedInstance.authorizedAccounts.append(Singleton.sharedInstance.envato)
+                                
+                            }
                     }
-               }
+                    
+                    
+                    //get username
+                    Alamofire.request(.POST, "https://api.envato.com/v1/market/private/user/username.json", headers: headers)
+                        .responseJSON { response in
+                            debugPrint(response)
+                            let dict = response.result.value as! NSDictionary
+                            if let username = dict["username"] {
+                                Singleton.sharedInstance.envato.title = username as! String
+                            }
+                    }
+                    
+                    
+                    
+                    
+                }
                 
-                Singleton.sharedInstance.authorizedAccounts.append(Singleton.sharedInstance.envato)
             },
             failure: { error in
                 print(error.localizedDescription)
