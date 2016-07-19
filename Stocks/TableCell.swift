@@ -20,7 +20,7 @@ class TableCell: UITableViewCell {
     @IBOutlet weak var openCell: UIImageView!
     
     
-    class var expandedHeight: CGFloat {get {return 185} }
+    class var expandedHeight: CGFloat {get {return 180} }
     class var defaultHeight: CGFloat {get {return 95} }
     
     func checkHeight() {

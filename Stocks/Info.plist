@@ -27,7 +27,7 @@
 			<string>com.kuznetsov.Stocks</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>stocks</string>
+				<string>stocksTreedeo</string>
 			</array>
 		</dict>
 	</array>

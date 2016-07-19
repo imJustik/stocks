@@ -6,15 +6,9 @@
 //  Copyright © 2016 Iliya Kuznetsov. All rights reserved.
 
 
-// application key: b1qnrINKr6lElbsEuahhbDtSQbE2bYqi
-// token: XjoBlj5j6oIo6m8dSV4BhPUCcl5acJQh
-//OAuth client ID: comkuznetsovstocks-wuojgioj
 
-
-
-
-// app: z42OtCGbRmyEJp981PlPTgXwhXtAlNea
-// OAuth: comtreedeostocks-9hwlxd6c
+// app oK5wGHzsmc4mMKVQ3CWq3ZwfimS5m8y5
+// OAUTH: comtreedeostocks-mjnetlhu
 
 import OAuthSwift
 import Alamofire
@@ -41,15 +35,15 @@ class Envato: AccountProtocol {
     
     func authorization() {  //перенести все ключи в realm, что бы не хранить в открытом виде
         let oauthswift = OAuth2Swift(
-            consumerKey:"comtreedeostocks-9hwlxd6c",
-            consumerSecret: "z42OtCGbRmyEJp981PlPTgXwhXtAlNea",
+            consumerKey:"comtreedeostocks-mjnetlhu",
+            consumerSecret: "oK5wGHzsmc4mMKVQ3CWq3ZwfimS5m8y5",
             authorizeUrl:   "https://api.envato.com/authorization",
             accessTokenUrl: "https://api.envato.com/token",
             responseType:   "code"
         )
         
         
-        WebViewController.targetURL = NSURL(string: "https://api.envato.com/authorization?response_type=code&client_id=comtreedeostocks-9hwlxd6c&redirect_uri=stocks://&state=demoGragon1")
+        WebViewController.targetURL = NSURL(string: "https://api.envato.com/authorization?response_type=code&client_id=comtreedeostocks-mjnetlhu&redirect_uri=stocksTreedeo://&state=demoGragon1")
         
         oauthswift.authorize_url_handler = WebViewController()
         oauthswift.authorizeWithCallbackURL(
